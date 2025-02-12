@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Personalidad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            margin-right: 10px;
+        }
+        .respuestas {
+            margin-left: 20px;
+        }
+        .resultados {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+        }
+        .resultados p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cuestionario para Evaluar la Personalidad en la Adultez Temprana</h1>
+    
+    <form id="cuestionario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required><br><br>
+
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+        </select><br><br>
+
+        <label for="ocupacion">Ocupación:</label>
+        <input type="text" id="ocupacion" name="ocupacion" required><br><br>
+
+        <h2>Responde las siguientes preguntas:</h2>
+
+        <!-- Pregunta 1 -->
+        <label for="q1">1. Me considero una persona que maneja bien el estrés y las dificultades:</label>
+        <div class="respuestas">
+            <input type="radio" name="q1" value="1" required> 1 - Nunca
+            <input type="radio" name="q1" value="2"> 2 - Rara vez
+            <input type="radio" name="q1" value="3"> 3 - A veces
+            <input type="radio" name="q1" value="4"> 4 - Frecuentemente
+            <input type="radio" name="q1" value="5"> 5 - Siempre
+        </div><br><br>
+
+        <!-- Pregunta 2 -->
+        <label for="q2">2. Prefiero seguir reglas y normas establecidas sin cuestionarlas:</label>
+        <div class="respuestas">
+            <input type="radio" name="q2" value="1" required> 1 - Nunca
+            <input type="radio" name="q2" value="2"> 2 - Rara vez
+            <input type="radio" name="q2" value="3"> 3 - A veces
+            <input type="radio" name="q2" value="4"> 4 - Frecuentemente
+            <input type="radio" name="q2" value="5"> 5 - Siempre
+        </div><br><br>
+
+        <!-- Pregunta 3 -->
+        <label for="q3">3. Me cuesta controlar mis impulsos en situaciones de tensión:</label>
+        <div class="respuestas">
+            <input type="radio" name="q3" value="1" required> 1 - Nunca
+            <input type="radio" name="q3" value="2"> 2 - Rara vez
+            <input type="radio" name="q3" value="3"> 3 - A veces
+            <input type="radio" name="q3" value="4"> 4 - Frecuentemente
+            <input type="radio" name="q3" value="5"> 5 - Siempre
+        </div><br><br>
+
+        <!-- Pregunta 4 -->
+        <label for="q4">4. Me adapto fácilmente a los cambios y situaciones inesperadas:</label>
+        <div class="respuestas">
+            <input type="radio" name="q4" value="1" required> 1 - Nunca
+            <input type="radio" name="q4" value="2"> 2 - Rara vez
+            <input type="radio" name="q4" value="3"> 3 - A veces
+            <input type="radio" name="q4" value="4"> 4 - Frecuentemente
+            <input type="radio" name="q4" value="5"> 5 - Siempre
+        </div><br><br>
+
+        <!-- Pregunta 5 -->
+        <label for="q5">5. Suelo evitar confrontaciones y prefiero mantener la armonía en mis relaciones:</label>
+        <div class="respuestas">
+            <input type="radio" name="q5" value="1" required> 1 - Nunca
+            <input type="radio" name="q5" value="2"> 2 - Rara vez
+            <input type="radio" name="q5" value="3"> 3 - A veces
+            <input type="radio" name="q5" value="4"> 4 - Frecuentemente
+            <input type="radio" name="q5" value="5"> 5 - Siempre
+        </div><br><br>
+
+        <!-- Pregunta 6 -->
+        <label for="q6">6. Cuando estoy molesto, actúo de manera impulsiva sin reflexionar:</label>
+        <div class="respuestas">
+            <input type="radio" name="q6" value="1" required> 1 - Nunca
+            <input type="radio" name="q6" value="2"> 2 - Rara vez
+            <input type="radio" name="q6" value="3"> 3 - A veces
+            <input type="radio" name="q6" value="4"> 4 - Frecuentemente
+            <input type="radio" name="q6" value="5"> 5 - Siempre
+        </div><br><br>
+
+        <!-- Pregunta 7 -->
+        <label for="q7">7. Enfrento los problemas de manera proactiva y buscando soluciones:</label>
+        <div class="respuestas">
+            <input type="radio" name="q7" value="1" required> 1 - Nunca
+            <input type="radio" name="q7" value="2"> 2 - Rara vez
+            <input type="radio" name="q7" value="3"> 3 - A veces
+            <input type="radio" name="q7" value="4"> 4 - Frecuentemente
+            <input type="radio" name="q7" value="5"> 5 - Siempre
+        </div><br><br>
+
+        <!-- Botón para enviar -->
+        <button type="button" onclick="calcularResultados()">Ver resultados</button>
+    </form>
+
+    <div class="resultados" id="resultados" style="display:none;">
+        <p><strong>Resultado del Cuestionario:</strong></p>
+        <p id="resiliente"></p>
+        <p id="sobrecontrolado"></p>
+        <p id="subcontrolado"></p>
+    </div>
+
+    <script>
+        function calcularResultados() {
+            var totalResiliente = 0;
+            var totalSobrecontrolado = 0;
+            var totalSubcontrolado = 0;
+
+            // Obtener las respuestas
+            var respuestas = document.querySelectorAll('input[type="radio"]:checked');
+
+            respuestas.forEach(function(respuesta) {
+                var valor = parseInt(respuesta.value);
+
+                // Clasificar según la pregunta y agregar el puntaje
+                if (respuesta.name === 'q1' || respuesta.name === 'q7') {
+                    totalResiliente += valor;
+                } else if (respuesta.name === 'q2') {
+                    totalSobrecontrolado += valor;
+                } else if (respuesta.name === 'q3' || respuesta.name === 'q6') {
+                    totalSubcontrolado += valor;
+                } else if (respuesta.name === 'q4' || respuesta.name === 'q5') {
+                    totalResiliente += valor;
+                }
+
+            });
+
+            // Mostrar resultados
+            document.getElementById("resultados").style.display = "block";
+            document.getElementById("resiliente").textContent = "Yo Resiliente: " + totalResiliente;
+            document.getElementById("sobrecontrolado").textContent = "Sobrecontrolado: " + totalSobrecontrolado;
+            document.getElementById("subcontrolado").textContent = "Subcontrolado: " + totalSubcontrolado;
+        }
+    </script>
+</body>
+</html>
